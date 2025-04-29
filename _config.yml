@@ -16,9 +16,9 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Hydra Template
+  name: Mozaic - free bookmark manager
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+    - https://mozaic.link
 
 # -----
 # Build
