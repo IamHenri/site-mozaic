@@ -6,7 +6,7 @@
   link: /blog/
   new_window: false
   highlight: false
-- name: &Agrave; propos
+- name: A propos
   link: /about/
   new_window: false
   highlight: false
