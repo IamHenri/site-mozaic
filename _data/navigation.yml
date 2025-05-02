@@ -1,4 +1,4 @@
-- name: Tarifs et abonnements
+- name: Abonnements
   link: /pricing/
   new_window: false
   highlight: false
