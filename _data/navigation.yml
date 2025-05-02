@@ -6,7 +6,7 @@
   link: /blog/
   new_window: false
   highlight: false
-- name: About
+- name: &Agrave; propos
   link: /about/
   new_window: false
   highlight: false
@@ -14,11 +14,11 @@
   link: /contact/
   new_window: false
   highlight: false
-- name: Login
-  link: /
+- name: Connexion
+  link: https://mozaic.link/login
   new_window: true
   highlight: false
-- name: Sign Up
-  link: /
+- name: S'inscrire
+  link: https://mozaic.link/login
   new_window: true
   highlight: true
