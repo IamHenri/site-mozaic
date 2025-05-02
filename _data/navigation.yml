@@ -1,5 +1,5 @@
-- name: Pricing
-  link: /pricing/
+- name: Tarifs et abonnements
+  link: /tarifs-abonnements/
   new_window: false
   highlight: false
 - name: Blog

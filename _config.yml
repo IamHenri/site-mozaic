@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Mozaic - Gestionnaire de marque-pags
+title: Mozaic - Gestionnaire de marque-pages
 url: "https://mozaic.link"
 baseurl:
 google_analytics_key:
@@ -16,7 +16,7 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Mozaic - free bookmark manager
+  name: Mozaic - Gestionnaire de marque-pages gratuit
   links:
     - https://mozaic.link
 
