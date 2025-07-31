@@ -1,7 +1,7 @@
 ---
-name: James Lopez
-position: Developer
-image_path: https://source.unsplash.com/collection/139386/604x604?a=.png
-twitter: CloudCannonApp
-blurb: James spends his weekends watching his favourite NBA team - L.A. Clippers.
+name: Noémie Leitao
+position: Ingénieure 
+image_path: https://media.licdn.com/dms/image/v2/D5603AQF4CM_A0XnkxQ/profile-displayphoto-shrink_200_200/B56ZSnRSSYHsAg-/0/1737973114477?e=1756944000&v=beta&t=zSLACnzGyCzv9k3TtnUvO2BQPfteYYDKVgnYPlwW2yM
+twitter: noemie-leitao
+blurb: Noémie sait comprendre toute problématique technique sans oublier le fonctionnel.
 ---
