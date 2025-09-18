@@ -1,7 +1,7 @@
 ---
 name: Noémie Leitao
 position: Ingénieure 
-image_path: https://media.licdn.com/dms/image/v2/D5603AQF4CM_A0XnkxQ/profile-displayphoto-shrink_200_200/B56ZSnRSSYHsAg-/0/1737973114477?e=1756944000&v=beta&t=zSLACnzGyCzv9k3TtnUvO2BQPfteYYDKVgnYPlwW2yM
+image_path: https://dam.malt.com/8ad1f55e-b603-48a3-bb6a-01db05fb8ff4?gravity=face&func=face&face_margin=70&w=440&h=440&force_format=webp
 twitter: noemie-leitao
 blurb: Noémie sait comprendre toute problématique technique sans oublier le fonctionnel.
 ---
