@@ -1,6 +1,6 @@
 ---
 date: 2025-05-12
-title: Et Gutenberg créea une nouvelle technologie
+title: Et Gutenberg créa une nouvelle technologie
 categories:
   - Histoire
 author_staff_member: anna
