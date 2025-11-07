@@ -74,12 +74,17 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-multiple-languages-plugin
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - LICENCE
+
+languages: ["fr", "en"]
+default_lang: "en"
+exclude_from_localization: ["css", "images", "js", "favicon.png"]
 
 # -----------
 # CloudCannon
