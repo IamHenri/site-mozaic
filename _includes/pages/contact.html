@@ -1,19 +1,8 @@
----
-title: Contact
-heading: Restons en contact
-description: Ravi de pouvoir vous répondre pour vous assister dans votre navigation depuis Mosaic
-
-map:
-  latitude: 48.85686777018372
-  longitude: 2.3975366710140467
-  address: "Mosaic / Designer Fonctionnel - 32 rue de Bagnolet - 75020 - Paris"
-  zoom: 13
----
 <div class="map" id="map"></div>
 
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
+	<form action="{{ site.baseurl }}{{ page.success_url }}" method="post" class="contact-form">
 		<input type="hidden" name="_to" value="nfo@mozaic.link" />
 		<input type="text" name="_gotcha" style="display: none;">
 

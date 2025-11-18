@@ -37,6 +37,8 @@ header {
 	.company-name {
 		font-size: 1.7em;
 		line-height: 0;
+		padding-top: 5px;
+		margin-bottom: -5px;
 
 		a {
 			display: inline-block;
@@ -46,6 +48,12 @@ header {
 			display: block;
 			width: auto;
 		}
+	}
+
+	.switch-lang {
+		position: absolute;
+		top: -10px;
+		left: 200px;
 	}
 }
 

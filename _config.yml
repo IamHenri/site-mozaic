@@ -29,20 +29,46 @@ collections:
   staff_members:
     _hide_content: true
 
-paginate: 10
-paginate_path: "/blog/:num/"
-permalink: pretty
-
 defaults:
   - scope:
       path: ""
+    values:
+      lang: "en" # Default language for files without a specific language path
+
+  # Règles pour tous les posts
+  - scope:
+      path: "_posts"
       type: "posts"
     values:
       layout: "post"
+      permalink: "/posts/:categories/:title/"
+      paginate: 1
+      paginate_path: "/blog/:num/"
       _options:
         content:
           width: 1500
           height: 2500
+
+  # Posts anglais
+  - scope:
+      path: "_posts/en"
+      type: "posts"
+    values:
+      lang: "en"
+      permalink: "/en/posts/:categories/:title/"
+      paginate: 1
+      paginate_path: "/en/blog/:num/"
+
+  # Posts français
+  - scope:
+      path: "_posts/fr"
+      type: "posts"
+    values:
+      lang: "fr"
+      permalink: "/fr/articles/:categories/:title/"
+      paginate: 1
+      paginate_path: "/fr/blog/:num/"
+      
   - scope:
       path: ""
       type: "staff_members"
@@ -74,7 +100,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-multiple-languages-plugin
 
 exclude:
   - Gemfile
@@ -82,9 +107,8 @@ exclude:
   - README.md
   - LICENCE
 
-languages: ["fr", "en"]
+languages: ["en", "fr"]
 default_lang: "en"
-exclude_from_localization: ["css", "images", "js", "favicon.png"]
 
 # -----------
 # CloudCannon

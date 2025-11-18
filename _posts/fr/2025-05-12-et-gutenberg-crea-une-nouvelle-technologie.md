@@ -2,8 +2,10 @@
 date: 2025-05-12
 title: Et Gutenberg créa une nouvelle technologie
 categories:
-  - Histoire
+   - Histoire
 author_staff_member: anna
+lang: fr
+pid: test
 ---
 
 La première des inventions qui permit d'en arriver ici, c'est l'imprimerie. Au delà de l’invention de l'écriture, encore une condition sine qua none à tout ça, avec l'imprimerie, la démocratisation des parque-pages. 

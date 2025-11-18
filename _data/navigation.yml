@@ -1,24 +1,48 @@
-- name: Abonnements
-  link: /pricing/
+- en:
+    name: Pricing
+    link: /pricing/
+  fr:
+    name: Abonnements
+    link: /fr/abonnement/
   new_window: false
   highlight: false
-- name: Blog
-  link: /blog/
+- en:
+    name: Blog
+    link: /blog/
+  fr:
+    name: Blog
+    link: /fr/blog/
   new_window: false
   highlight: false
-- name: A propos
-  link: /about/
+- en:
+    name: About
+    link: /about/
+  fr:
+    name: A propos
+    link: /fr/a-propos/
   new_window: false
   highlight: false
-- name: Contact
-  link: /contact/
+- en:
+    name: Contact
+    link: /contact/
+  fr:
+    name: Nous contacter
+    link: /fr/nous-contacter/
   new_window: false
   highlight: false
-- name: Connexion
-  link: https://mozaic.link/login
+- en:
+    name: Login
+    link: https://mozaic.link/login
+  fr:
+    name: Connexion
+    link: https://mozaic.link/login
   new_window: true
   highlight: false
-- name: S'inscrire
-  link: https://mozaic.link/login
+- en:
+    name: Sign in
+    link: https://mozaic.link/login
+  fr:
+    name: S'inscire
+    link: https://mozaic.link/login
   new_window: true
   highlight: true

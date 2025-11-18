@@ -1,15 +1,39 @@
-<nav>
-	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
-	<a class="editor-link btn" href="cloudcannon:collections/_data/navigation.yml" class="btn"><strong>&#9998;</strong> Edit navigation</a>
-	{% for link in site.data.navigation %}
-		{% assign class = "" %}
-		{% if link.highlight %}
-			{% assign class = class | append: " highlight" %}
-		{% endif %}
 
-		{% if link.link == page.url %}
-			{% assign class = class | append: " active" %}
-		{% endif %}
-		<a href="{% include relative-src.html src=link.link %}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
-	{% endfor %}
+<nav>
+  {% assign current_lang = page.lang | default: site.lang %}
+  
+  {% if (current_lang == 'fr') %}
+	 {% assign url = page.url | replace: '/fr', '' %}
+	 {% assign next_lang = 'en' %}
+  {% else %}
+	{% assign url = '/fr' | append: page.url %}
+	{% assign next_lang = 'fr' %}
+  {% endif %}
+  
+  {% assign matchPage = site.pages | where_exp: "p", "p.pid == page.pid and p.lang == next_lang" | first %}
+  {% if matchPage %}
+    <a class="switch-lang" href="{{ matchPage.url }}">{{ next_lang }}</a>
+  {% endif %}
+
+  {% assign matchPost = site.posts | where_exp: "p", "p.pid == page.pid and p.lang == next_lang" | first %}
+  {% if matchPost %}
+    <a class="switch-lang" href="{{ matchPost.url }}">{{ next_lang }}</a>
+  {% endif %}
+
+  <a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+  <a class="editor-link btn" href="cloudcannon:collections/_data/navigation.yml" class="btn"><strong>&#9998;</strong> Edit navigation</a>
+
+  {% for link in site.data.navigation %}
+
+    {% assign class = "" %}
+    {% if link.highlight %}
+      {% assign class = class | append: " highlight" %}
+    {% endif %}
+    {% if link[current_lang].link == page.url %}
+      {% assign class = class | append: " active" %}
+    {% endif %}
+
+	  <a href="{{ link[current_lang].link }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link[current_lang].name }}</a>
+  {% endfor %}
 </nav>
+

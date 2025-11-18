@@ -1,0 +1,52 @@
+{% assign all_pages = site.pages %}
+{% for collection in site.collections %}
+{% assign all_pages = all_pages | concat: collection.docs %}
+{% endfor %}
+
+{% for lang in site.languages %}
+{% assign alt_prefix = '/' | append: lang | append: '/' %}
+{% assign current_prefix = '/' | append: page.lang | append: '/' %}
+{% assign alt_url = page.url | replace_first: current_prefix, alt_prefix %}
+{% assign alt_page = all_pages | where: "url", alt_url | first %}
+{% if alt_page and page.url != '/' %}
+<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ alt_page.url }}" />
+{% endif %}
+{% endfor %}
+
+<script>
+(function() {
+  // 1️⃣ Ne pas exécuter pour les bots
+  if (/bot|crawl|spider/i.test(navigator.userAgent)) return;
+
+  // 2️⃣ Langue de la page actuelle
+  const currentLang = '{{ lang }}';
+
+  // 3️⃣ Langue stockée (choix utilisateur)
+  const storedLang = localStorage.getItem('lang');
+
+  // 4️⃣ Langue du navigateur (ex: 'fr-FR' → 'fr')
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
+
+  // 5️⃣ Langue cible : priorité au choix utilisateur, sinon langue navigateur
+  const preferredLang = storedLang || browserLang;
+
+  // 🧭 Vérifie si on arrive depuis l'extérieur du site
+  const fromSameSite = document.referrer && document.referrer.includes(window.location.origin);
+
+  // 6️⃣ Si première visite (pas encore stockée)
+  if (!storedLang) {
+    // On sauvegarde automatiquement la langue du navigateur
+    localStorage.setItem('lang', preferredLang);
+  }
+
+  // 7️⃣ Redirection automatique uniquement si :
+  // - la langue du navigateur ≠ langue de la page
+  // - l'utilisateur n’a pas déjà fait un choix (pas de redirection si storedLang existe)
+  if ((!fromSameSite || !storedLang) && preferredLang !== currentLang) {
+    const targetPath = preferredLang === 'fr' ? '/fr/' : '/';
+    if (!window.location.pathname.startsWith(targetPath)) {
+      window.location.href = targetPath;
+    }
+  }
+})();
+</script>
