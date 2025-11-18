@@ -2,40 +2,15 @@
 
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}{{ page.success_url }}" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="nfo@mozaic.link" />
-		<input type="text" name="_gotcha" style="display: none;">
-
-		<label for="name">Full Name</label>
-		<input type="text" name="name" id="name" placeholder="Enter your name..." />
-
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
-
-		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-
-		<input type="submit" value="Send Message" />
-	</form>
-
 	<div class="contact-details">
-		<h3 class="editable">Adresse</h3>
+		<h3 class="editable">{{page.address}}</h3>
 		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
 
 		<h3 class="editable">Email</h3>
 		<p><a href="mailto:nfo@mozaic.link">nfo@mozaic.link</a></p>
 	</div>
 </div>
-<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
-<!-- <ul class="staff">
-	{% for person in site.staff_members %}
-		<li>
-			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-			<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter }}">{{ person.name }}</a></div>
-			<div class="position">{{ person.position }}</div>
-		</li>
-	{% endfor %}
-</ul> -->
+
 <script type="text/javascript">
 	window.mapData = {{ page.map | jsonify }};
 
