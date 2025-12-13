@@ -39,13 +39,15 @@
     localStorage.setItem('lang', preferredLang);
   }
 
+  window.BASEURL = "{{ site.baseurl }}";
+
   // 7️⃣ Redirection automatique uniquement si :
   // - la langue du navigateur ≠ langue de la page
   // - l'utilisateur n’a pas déjà fait un choix (pas de redirection si storedLang existe)
   if ((!fromSameSite || !storedLang) && preferredLang !== currentLang) {
     const targetPath = preferredLang === 'fr' ? '/fr/' : '/';
     if (!window.location.pathname.startsWith(targetPath)) {
-      window.location.href = targetPath;
+      window.location.href = window.BASEURL + targetPath;
     }
   }
 })();

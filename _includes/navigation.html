@@ -16,7 +16,7 @@
   {% assign samePidPages = site.pages | where_exp: "p", "p.pid == page.pid" %}
   {% assign matchPage = samePidPages | where:"lang", next_lang | first %}
   {% if matchPage %}
-    <a class="switch-lang" href="{{ matchPage.url }}">{{ next_lang }}</a>
+    <a class="switch-lang" href="{{ site.baseurl }}{{ matchPage.url }}">{{ next_lang }}</a>
   {% endif %}
 
   {%- comment -%}
@@ -26,7 +26,7 @@
   {% assign samePidPosts = site.posts | where_exp: "p", "p.pid == page.pid" %}
   {% assign matchPost = samePidPosts | where:"lang", next_lang | first %}
   {% if matchPost %}
-    <a class="switch-lang" href="{{ matchPost.url }}">{{ next_lang }}</a>
+    <a class="switch-lang" href="{{ site.baseurl }}{{ matchPost.url }}">{{ next_lang }}</a>
   {% endif %}
 
   <a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
@@ -45,6 +45,6 @@
     {% if link[current_lang].link == page.url %}
       {% assign class = class | append: " active" %}
     {% endif %}
-    <a href="{{ link[current_lang].link }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link[current_lang].name }}</a>
+    <a href="{% unless link.new_window %}{{ site.baseurl }}{% endunless %}{{ link[current_lang].link }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link[current_lang].name }}</a>
   {% endfor %}
 </nav>

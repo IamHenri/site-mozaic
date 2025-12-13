@@ -3,7 +3,7 @@
 
 title: Mozaic - Gestionnaire de marque-pages
 url: "https://mozaic.link"
-baseurl:
+baseurl: "/site-mozaic"
 google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
